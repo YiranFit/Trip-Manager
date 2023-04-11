@@ -1,15 +1,17 @@
-# Yarn-Barn
+# Trip Manager
 
-Yarn Barn is a website that allows users to manage their knitting patterns. Users can create their own patterns, view, delete, and search for patterns based on different criteria.
+Trip manager is a website that allows users to manage their trips. With Trip Manager, users can add future trips, manage trip details, mark trips as finished, and delete trips. Additionally, Trip manager provides features for checking weather, and finding restaurants and hotels in their travel destinations.
 
 ### Functionalities
 
 + User registration and login: Allow users to register an account and login to the website, or delete their account if needed.
 
-+ Pattern Creatioo: Allow users to create their own knitting patterns by specifying the stitch patterns, yarns, needle sizes, and other details.
++ Add feture trips: Users can add information about their future trips, including the destination, dates, and notes(activities planned)
 
-+ Pattern management: Allow users to view, edit, and delete their patterns.
++ Manage trip details: User can edit the details of their trips.
 
-+ Pattern Search: Allow users to search for patterns by keyword, category.
++ Mark trips as finsihed: Once a trip is completed, users can mark is as finished to keep track of their travel history.
 
-+ Yarn and pattern store locator: Integrate an API that allows users to locate nearby stores that sell yarns ansd patterns.
++ Delete trips: Users can delete trips that no longer necessary.
+
++ Check weather, restaurants, and hotels.
