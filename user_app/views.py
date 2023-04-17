@@ -49,7 +49,7 @@ def curruser(request):
     if request.user.is_authenticated:
         user_info = serialize('json', [request.user], fields = ['name', 'email'])
         user_info_readbale = json.loads(user_info)
-        return JsonResponse(user_info_readbale[0]['fields'])
+        return JsonResponse({'user':user_info_readbale[0]['fields']})
     else:
         return JsonResponse({'user': None})
     
