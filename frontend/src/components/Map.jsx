@@ -1,29 +1,49 @@
 
 import GoogleMapReact from "google-map-react";
-import {Paper, Typography, useMediaQuery} from "@material-ui/core";
-// import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
-// import Rating from "@material-ui/lab";
+import { useMediaQuery} from "@material-ui/core";
+import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
+import { Typography } from "@material-ui/core";
 
-export const Map = () => { 
+
+
+export const Map = ({setCoordinates, setBounds, coordinates, places,setChildClicked}) => { 
     const isMobile = useMediaQuery("(min-width:600px)");
-    const coordinates = {lat: 0, lng: 0};
-
 
     return (
         <div>
-            <h3>map</h3>
-            <GoogleMapReact 
-                bootstrapURLKeys={{key:''}}
-                defaultCenter={coordinates}
-                center={coordinates}
-                defaultZoom={14}
-                margin={[50,50,50,50]}
-                options={''}
-                onChange={''}
-                onChildClick={''}
-            >   
+            <div style={{height:'85vh', width:'100%' }}>
+                <div style={{display:'flex', justifyContent:'space-between'}}>
+                    <Typography variant="h4" gutterBottom>
+                        Map
+                    </Typography>
+                </div>
+                <GoogleMapReact
+                    bootstrapURLKeys={{key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
+                    defaultCenter={coordinates}
+                    center={coordinates}
+                    defaultZoom={14}
+                    margin={[50,50,50,50]}
+                    options={''}
+                    onChange={(e) => {
+                        // console.log(e)
+                        setCoordinates({lat: e.center.lat, lng: e.center.lng});
+                        setBounds({ne: e.marginBounds.ne, sw: e.marginBounds.sw})         
+                    }}
+                    onChildClick={(child) => {setChildClicked(child)}}
+                >   
+                    {places?.map((place, i) => (
+                        <div 
+                            lat={Number(place.latitude)}
+                            lng={Number(place.longitude)}
+                            key={i}>   
+                           {
+                             isMobile && <LocationOnOutlinedIcon color='primary' fontSize="large"/>
+                           }
+                        </div>
+                    ))}
+                </GoogleMapReact>
+            </div>
 
-            </GoogleMapReact>
         
         </div>
     )

@@ -12,11 +12,11 @@ export const NavBar = () => {
             </Typography>
 
             <Box className='box'>
-                <Link to='/'>Home</Link>
-                <Link to={'/signup'}>Sign Up</Link>
-                <Link to={'/login/'}>Login</Link>
-                <Link to={'/logout/'}>Logout</Link>
-                <Link to={'/search/'}>Search</Link>
+                <Link style={{color: 'white'}} to='/'>Home</Link>
+                <Link style={{color: 'white'}} to={'/signup'}>Sign Up</Link>
+                <Link style={{color: 'white'}} to={'/login/'}>Login</Link>
+                <Link style={{color: 'white'}} to={'/logout/'}>Logout</Link>
+                <Link style={{color: 'white'}} to={'/search/'}>Search</Link>
                 
               <Typography variant="h7">
                   My Trips
