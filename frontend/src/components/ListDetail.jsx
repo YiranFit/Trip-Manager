@@ -4,7 +4,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import {Link} from 'react-router-dom'
 
 export const ListDetail = ({place}) => { 
-    console.log(place)
+    // console.log(place)
 
     return (
         <div>

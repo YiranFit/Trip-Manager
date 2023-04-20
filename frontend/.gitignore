@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.env
 dist
 dist-ssr
 *.local
@@ -17,7 +18,6 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
-.env
 *.suo
 *.ntvs*
 *.njsproj

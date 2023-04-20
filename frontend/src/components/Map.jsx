@@ -1,14 +1,14 @@
-
 import GoogleMapReact from "google-map-react";
 import { useMediaQuery} from "@material-ui/core";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import { Typography } from "@material-ui/core";
 
-
+const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+console.log(apiKey)
 
 export const Map = ({setCoordinates, setBounds, coordinates, places,setChildClicked}) => { 
     const isMobile = useMediaQuery("(min-width:600px)");
-
+    
     return (
         <div>
             <div style={{height:'85vh', width:'100%' }}>
@@ -18,7 +18,7 @@ export const Map = ({setCoordinates, setBounds, coordinates, places,setChildClic
                     </Typography>
                 </div>
                 <GoogleMapReact
-                    bootstrapURLKeys={{key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
+                    bootstrapURLKeys={{key: apiKey }}
                     defaultCenter={coordinates}
                     center={coordinates}
                     defaultZoom={14}
@@ -43,8 +43,6 @@ export const Map = ({setCoordinates, setBounds, coordinates, places,setChildClic
                     ))}
                 </GoogleMapReact>
             </div>
-
-        
         </div>
     )
 }
