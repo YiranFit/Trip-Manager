@@ -29,18 +29,6 @@ def trip(request):
         except Exception as e:
             print(e)
             return JsonResponse({'trips': False})
-    
-    # elif request.method == 'DELETE':
-    #     try:
-    #         print(request.data)
-    #         trip = Trip.objects.get(destination=request.data['destination'])
-    #         trip.delete()
-    #         trips = list(Trip.objects.filter(user=request.user).values())
-    #         return JsonResponse({'trips': trips})
-    #     except Exception as e:
-    #         print('fail')
-    #         print(e)
-    #         return JsonResponse({'trips': False})
 
 @api_view(['GET','DELETE'])
 def trip_detail(request,id):
