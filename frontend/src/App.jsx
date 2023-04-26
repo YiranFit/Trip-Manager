@@ -10,19 +10,23 @@ export const UserContext = createContext(null)
 
 function App() {
   const [user, setUser] = useState(null)
+  
   getToken()  
 
   useEffect(() => { 
-    const getCurrUser = async() => { 
-       setUser(await curruser())
-    };
-    getCurrUser()
-},[])
+
+      const getCurrUser = async() => { 
+        setUser(await curruser())
+     };
+
+     getCurrUser()
+
+  },[])
 
   return (
     <div className="App">
         <NavBar />
-        <h3>Start to explore {user && user.name}</h3>
+        
         <UserContext.Provider value={{user, setUser}}>
         <Outlet />
         </UserContext.Provider>
