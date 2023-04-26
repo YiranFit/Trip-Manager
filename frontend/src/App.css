@@ -13,4 +13,23 @@
 } */
 
 
+.homepage {
+  height: 1000px;
+  background-image: url("./images/travel.webp");
+  background-size: cover;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: -70px;
+}
 
+.homepage h3 {
+  font-size: 70px;
+  color: white;
+  padding-top: 200px;
+}
+
+.homepage-link {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}

@@ -1,9 +1,9 @@
 import { CssBaseline, Grid } from "@material-ui/core"
 import {useState, useEffect} from "react"
 import React from "react"
-import {Map} from "./Map"
-import {List} from "./List"
-import { allPlacesData} from "./utilities"
+import {Map} from "../components/Map"
+import {List} from "../components/List"
+import { allPlacesData} from '../utilities'
 import '../App.css'
 
 

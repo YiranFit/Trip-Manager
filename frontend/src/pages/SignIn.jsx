@@ -14,7 +14,6 @@ export const LogIn = () => {
         navigate('/')
     }
 
-   
 
     return (
         <form onSubmit={e => [e.preventDefault(), logIn(email,password,setUser), handleLogin(), setEmail(''), setPassword('')]}>
