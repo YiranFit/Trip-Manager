@@ -15,7 +15,9 @@ export const logIn = async(email, password, setUser) => {
         'email': email,
         'password': password
     })
-
+    if(!email | !password){
+        alert('Please enter a valid username and password')
+    }
     setUser(response.data)   
 }
 

@@ -18,10 +18,17 @@ export const HomePage = () => {
 
     return (
         <div className='homepage'>
-            <h3 className='homepage-title'>The World Is Yours {user && user.name}</h3>
-            {/* <Link className='homepage-link' to='/search/'>Start To Explore</Link> */}
-            <button onClick={e => [e.preventDefault(), handleSearch()]}>Start To Explore</button>
-            <button onClick={() => handleCreate() }>Create New Trips</button>
+            <div>
+                <header className='homepage-header'>The World Is Yours {user && user.name}</header>
+            </div>
+            <div className='homepage-buttons'>
+                <div >
+                    <button className='homepage-button' onClick={e => [e.preventDefault(), handleSearch()]}>Start To Explore</button>
+                </div>
+                <div >
+                    <button className='homepage-button' onClick={() => handleCreate() }>Create New Trips</button>
+                </div>
+            </div>
 
         </div>
     );

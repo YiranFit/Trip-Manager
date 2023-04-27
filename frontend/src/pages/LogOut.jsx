@@ -20,9 +20,13 @@ export const LogOut = () => {
 
     
     return (
-        <div>
-            <h3>Are you sure you want ot log out?</h3>
-            <button onClick={(e) => [e.preventDefault(),logout(setUser), handleLogout()]}>Log Out</button>
+        <div className="logout-container">
+            <div className="logout">
+                <header className="logout-hearder">Are you sure you want to logout?</header>
+            </div>
+            <div className="logout">
+            <button className="logout-button" onClick={(e) => [e.preventDefault(),logout(setUser), handleLogout()]}>Logout</button>
+            </div>
         </div>
     )
 }
