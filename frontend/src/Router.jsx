@@ -7,7 +7,12 @@ import App from './App'
 import { SearchPage } from './pages/SearchPage';
 import { MyTrips } from './pages/MyTrips';
 import { getTrips } from './utilities';
-import { TripDetail } from './pages/TripDetail';
+import { TripDetail, getTripLoader } from './pages/TripDetail';
+
+
+
+
+
 
 
 const Router = createHashRouter([
@@ -41,9 +46,10 @@ const Router = createHashRouter([
                 loader: getTrips
             },
             {
-                path: '/trips/:name',
+                path: '/trips/:id',
                 element: <TripDetail />,
-            }
+                loader: getTripLoader
+            },
 
         ]
     }

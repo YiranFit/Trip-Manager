@@ -1,9 +1,10 @@
 import {useLoaderData} from 'react-router-dom';
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import { createTrips} from '../utilities';
 import {TripList} from '../components/TripList';
 import { useContext } from 'react';
 import { UserContext } from '../App';
+
 import '../App.css'
 
 export const MyTrips = () => { 
@@ -15,7 +16,7 @@ export const MyTrips = () => {
     const [currTrips, setCurrTrips] = useState(trips)
     
     const getMyTrips = async () => {
-        if (!user) {
+        if (user===null) {
           alert('Please log in to create a trip.');
           return;
         } else if (!destination || !start_date || !end_date) {
@@ -24,13 +25,14 @@ export const MyTrips = () => {
         }
 
         setCurrTrips(await createTrips(destination, start_date, end_date))
-      };
+      };  
       
+
     return (
         <div className='myTrips-box'>
           <div className='myTrips-form'>
               <h3>Create Trips</h3>
-              <form style={{display:'flex'}} onSubmit={(e) => [e.preventDefault(), getMyTrips()]}>
+              <form style={{display:'flex'}} onSubmit={(e) => [e.preventDefault(), getMyTrips(), setDestination(''), setStart_Date(''), setEnd_Date('')]}>
                   <div className='myTrips-input'>
                     <label htmlFor="destination">Destination</label><br />
                     <input id='destination' type="text" value={destination} onChange={(e)=>setDestination(e.target.value)}/>
@@ -56,18 +58,21 @@ export const MyTrips = () => {
             <br />
             <hr />
             <br />
+            
               
             {  currTrips &&
                 currTrips.map((trip) => (
-                  <ul>
-                  <li key={trip.id}> <TripList
+                  // <ul>
+                  <div style={{marginBottom:'10px'}} key={trip.id}> <TripList
                       destination={trip.destination}
                       start_date={trip.start_date}
                       end_date={trip.end_date}
                       id = {trip.id}
+                      currTrips={currTrips}
+                      setCurrTrips={setCurrTrips}
                       />
-                  </li>
-                  </ul>
+                  </div>
+                  // </ul>
                   )
                   ) 
               }

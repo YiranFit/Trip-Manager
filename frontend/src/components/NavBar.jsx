@@ -17,7 +17,6 @@ export const NavBar = () => {
                 <Link style={{color: '#fff'}} to={'/logout/'}>Logout</Link>
                 <Link style={{color: '#fff'}} to={'/trips/'}>My Trips</Link>
                 <Link style={{color: '#fff'}} to={'/search/'}>Search</Link>
-
             </Box>
 
           </Toolbar>

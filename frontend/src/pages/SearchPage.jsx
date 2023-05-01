@@ -13,6 +13,9 @@ export const SearchPage = () => {
     const [bounds, setBounds] = useState(null);
     const [childClicked, setChildClicked] = useState(null);
     const [type, setType] = useState('hotels');
+
+    const [isLoading, setIsLoading] = useState(false);
+
     
     // get your location 
     useEffect(() => {
@@ -23,12 +26,15 @@ export const SearchPage = () => {
 
     useEffect(() => { 
         // console.log(coordinates, bounds)
+        setIsLoading(true)
         if (bounds) {
             allPlacesData(type,bounds.sw, bounds.ne)
             .then((data) => {
                 // console.log(data)
                 setPlaces(data)
-            })
+                setIsLoading(false)
+            }
+            )
         }    
     }, [type, coordinates, bounds])
 
@@ -42,9 +48,10 @@ export const SearchPage = () => {
                         childClicked={childClicked}
                         type={type}
                         setType={setType}
+                        isLoading={isLoading}
                     />
                 </Grid>
-                <Grid item xs={12} md={7}>
+                <Grid item xs={12} md={7}>    
                     <Map 
                         setCoordinates={setCoordinates} 
                         setBounds={setBounds}

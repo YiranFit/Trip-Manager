@@ -1,10 +1,11 @@
 import React from 'react'
-import { Box, Typography, Card, Button, CardContent, CardMedia} from '@material-ui/core'
+import { Box, Typography, Card, CardContent, CardMedia} from '@material-ui/core'
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import {Link} from 'react-router-dom'
 
-export const ListDetail = ({place}) => { 
+export const ListDetail = ({place,selected,refProp}) => { 
     // console.log(place)
+    if (selected) refProp?.current?.scrollIntoView({behavior: 'smooth', block: 'start'})
 
     return (
         <div>

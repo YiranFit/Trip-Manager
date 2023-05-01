@@ -1,13 +1,24 @@
 import GoogleMapReact from "google-map-react";
-import { useMediaQuery} from "@material-ui/core";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
-import { Typography } from "@material-ui/core";
+import { Typography, Box, InputBase,useMediaQuery } from "@material-ui/core";
+import { Autocomplete } from "@react-google-maps/api";
+import { useState } from "react";
+import '../App.css'
+
 
 const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-console.log(apiKey)
+
 
 export const Map = ({setCoordinates, setBounds, coordinates, places,setChildClicked}) => { 
     const isMobile = useMediaQuery("(min-width:600px)");
+    const [autocomplete, setAutocomplete] = useState(null);
+
+    const onLoad = (autoC) => setAutocomplete(autoC);
+    const onPlaceChanged = () => {
+        const lat = autocomplete.getPlace().geometry.location.lat();
+        const lng = autocomplete.getPlace().geometry.location.lng();
+        setCoordinates({lat, lng})
+    }
     
     return (
         <div>
@@ -16,7 +27,19 @@ export const Map = ({setCoordinates, setBounds, coordinates, places,setChildClic
                     <Typography variant="h4" gutterBottom>
                         Map
                     </Typography>
+
+                    <Box display='flex' alignItems='center' width='400px' justifyContent='space-evenly' >
+                        <Typography variant="h6">
+                            Search new places
+                        </Typography>
+                        <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
+                            <div className="inputBase">
+                                <InputBase placeholder="Search..."/>
+                            </div>
+                        </Autocomplete>
+                    </Box>
                 </div>
+
                 <GoogleMapReact
                     bootstrapURLKeys={{key: apiKey }}
                     defaultCenter={coordinates}
