@@ -39,7 +39,7 @@ export const SignUp = () => {
 
                 <div className="signup-input">
                     <input classname="signup-submit" style={{border:'none', borderRadius:'30px', fontSize:'20px', height:'50px', 
-                            background:'rgba(255,255,255, 0.7)', cursor:'pointer', transition:'0.5s'}} type="submit" value='signup'/>
+                            background:'rgba(255,255,255, 0.7)', cursor:'pointer', transition:'0.5s'}} type="submit" value='Signup'/>
                 </div>
             </form>
         </div>

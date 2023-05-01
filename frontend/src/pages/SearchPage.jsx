@@ -12,7 +12,7 @@ export const SearchPage = () => {
     const [coordinates, setCoordinates] = useState({});
     const [bounds, setBounds] = useState(null);
     const [childClicked, setChildClicked] = useState(null);
-    const [type, setType] = useState('hotels');
+    const [type, setType] = useState('restaurants');
 
     const [isLoading, setIsLoading] = useState(false);
 
