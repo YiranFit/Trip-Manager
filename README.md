@@ -1,17 +1,15 @@
 # Trip Manager
 
-Trip manager is a website that allows users to manage their trips. With Trip Manager, users can add future trips, manage trip details, mark trips as finished, and delete trips. Additionally, Trip manager provides features for checking weather, and finding restaurants and hotels in their travel destinations.
+Trip Manager is a dynamic and user-friendly full stack application built on the powerful Django and React frameworks, with data managed and stored using Postgres database system. With Trip Manager, users can manage their trips from start to finish, with features designed to make trip planning easier than ever before. Additionally, I integrated two third-party APIs, Google Map API, and Travel Adviser from RapidApi, to provide users with additional features like finding restaurants and hotels at their travel destinations or any other locations. These features are designed to enhance the user experience and make trip planning more convenient.
 
 ### Functionalities
 
-+ User registration and login: Allow users to register an account and login to the website, or delete their account if needed.
++ User Registration, Login, and Logout: The platform offers secure users’ registration and login/logout functionalities, allowing users to easily access the trips information.
 
-+ Add feture trips: Users can add information about their future trips, including the destination, dates, and notes(activities planned)
++ Add Future Trips:  Users can add all the essential details of future trips, including the destination, dates, and notes.
 
-+ Manage trip details: User can edit the details of their trips.
++ Manage Trip Details: Users can easily manage the details of the trips, including adding or deleting restaurants, hotels, and notes.
 
-+ Mark trips as finsihed: Once a trip is completed, users can mark is as finished to keep track of their travel history.
++ Delete Trips: Users can delete trips that are no longer necessary.
 
-+ Delete trips: Users can delete trips that no longer necessary.
-
-+ Check weather, restaurants, and hotels.
++ Find Restaurants and Hotels: Users can search for restaurants and hotels in their travel destinations or any other locations.

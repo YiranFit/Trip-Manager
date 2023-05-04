@@ -1,4 +1,4 @@
- import {AppBar, Toolbar, Typography, Box, InputBase,Button} from '@material-ui/core'   //npm install @material-ui/core --legacy-peer-deps
+import {AppBar, Toolbar, Typography, Box, InputBase,Button} from '@material-ui/core'   //npm install @material-ui/core --legacy-peer-deps
 import{ Link} from 'react-router-dom'
 
 
